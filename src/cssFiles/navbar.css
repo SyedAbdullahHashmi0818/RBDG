@@ -1,0 +1,52 @@
+/* navbar.css */
+
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--color-white); /* Use CSS variable if using theme */
+  color: var(--color-darkBlue);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+  height: 50px;
+}
+
+/* Left section styles */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Right section styles */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Link styles */
+.navbar-link {
+  text-decoration: none;
+  color: var(--color-darkBlue);
+  font-size: var(--font-size-small);
+  font-family: var(--font-myFontBold);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+}
+
+/* Button styles */
+.navbar-button {
+  padding: 5px 10px;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Hover effect for links */
+.navbar-link:hover {
+  color: var(--color-orange); /* Add hover color change */
+}

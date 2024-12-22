@@ -1,0 +1,48 @@
+/* theme.css */
+:root {
+  /* Colors */
+  --color-darkBlue: #003a6f;
+  --color-midBlue: #3a70a2;
+  --color-lightBlue: #6ec5e9;
+  --color-white: #ffffff;
+  --color-gray: #b4b4b4;
+  --color-darkGray: #757575;
+  --color-lightGray2: #d1d0d0;
+  --color-lightGray: #f9f7f7;
+  --color-black: #1e1e1e;
+  --color-orange: #f28e30;
+  --color-yellow: #f0aa40;
+  --color-red: #ff4545;
+  --color-green: #7dd56c;
+  --color-greenDe: #80c772;
+
+  /* Shadows */
+  --shadow-default: 4px 4px 10px rgba(0, 0, 0, 0.3);
+  --shadow-light: 4px 4px 10px rgba(0.05, 0.05, 0.05, 0.05);
+  --shadow-hard: 0px 0px 10px rgba(0.3, 0.3, 0.3, 0.3);
+  --shadow-down: 0px 13px 48px -16px rgba(0, 0, 0, 0.75);
+  /* Fonts */
+  --font-myFontBold: "Roboto-SemiBold", Helvetica, sans-serif;
+  --font-myFontMedium: "Roboto-Medium", Helvetica;
+  --font-myFontLight: "Roboto-Regular", Helvetica;
+
+  /* Font Sizes */
+  --font-size-large: 48px;
+  --font-size-medium: 36px;
+  --font-size-semiMedium: 24px;
+  --font-size-small: 16px;
+  --font-size-smallo: 14px;
+  --font-size-smaller: 12px;
+
+  /* Font Weights */
+  --font-weight-bolder: 700;
+  --font-weight-bold: 600;
+  --font-weight-semiBold: 550;
+
+  /* Border Radius */
+  --border-radius-standard: 27px;
+  --border-radius-boxier: 15px;
+  --border-radius-boxiest: 10px;
+  --border-radius-box: 5px;
+  --border-radius-rounder: 34px;
+}

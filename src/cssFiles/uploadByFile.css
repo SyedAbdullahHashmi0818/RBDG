@@ -1,0 +1,395 @@
+body {
+  overflow: hidden;
+}
+
+.uploadBg1 {
+  background-image: url("../images/Group 1.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.controlBar1 {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin-left: 45px;
+  margin-bottom: 20px;
+}
+
+.backButton1 {
+  border-radius: var(--border-radius-rounder);
+  background-color: var(--color-white);
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-hard);
+  width: 45px;
+  height: 45px;
+  align-self: center;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.backButton1 p {
+  padding: 4px;
+  margin: 0%;
+  text-align: center;
+  align-self: center;
+  height: 20px;
+  color: var(--color-darkBlue);
+  font-size: 32px;
+  font-family: var(--font-myFontBold);
+  font-weight: var(--font-weight-bold);
+}
+
+.backButton1:hover {
+  background-color: var(--color-orange);
+  cursor: pointer;
+}
+
+.backButton1:hover p {
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.title1 {
+  width: 500px;
+  overflow: hidden;
+  border-radius: var(--border-radius-boxier);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-hard);
+  height: 60px;
+}
+
+#innerBar1 {
+  width: 500px;
+  background-color: var(--color-midBlue);
+  height: 10px;
+}
+
+#innerContent1 {
+  margin: 0%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#innerContent1 p {
+  padding: 15px 10px 20px 20px;
+  font-size: var(--font-size-small);
+  font-family: var(--font-myFontBold);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-midBlue);
+  margin: 0%;
+}
+
+.submitButton1 {
+  border-radius: var(--border-radius-boxiest);
+  background-color: var(--color-orange);
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-hard);
+  width: 90px;
+  height: 40px;
+  align-self: center;
+  margin-top: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.submitButton1 p {
+  padding: 10px;
+  margin: 0%;
+  text-align: center;
+  align-self: center;
+  color: var(--color-white);
+  font-size: var(--font-size-small);
+  font-family: var(--font-myFontBold);
+  font-weight: var(--font-weight-bold);
+}
+
+.submitButton1:hover {
+  background-color: var(--color-green);
+  cursor: pointer;
+}
+
+.fileBox,
+.columnBox {
+  background-color: var(--color-white);
+  width: 450px;
+  box-shadow: var(--shadow-hard);
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  border-radius: var(--border-radius-standard);
+  align-self: center;
+  flex-direction: column;
+}
+
+.fileBox {
+  height: 300px;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.fileBox:hover {
+  transform: scale(1.05) !important;
+}
+
+.fileBox:hover #sp2 {
+  color: var(--color-orange);
+}
+
+.columnBox {
+  height: 150px;
+  margin-top: 20px;
+}
+
+.fileIMG {
+  height: 90px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.innerFileBox {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 400px;
+  height: 250px;
+  border: 2px dashed var(--color-gray);
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-boxier);
+  align-items: center;
+  justify-content: center;
+  transition: border 0.3s ease-in-out;
+}
+
+.dropText {
+  display: flex;
+  flex-direction: row;
+  border: none;
+  margin: 10px;
+  margin-top: 15px;
+  padding: none;
+}
+
+.dropText p {
+  margin: 0%;
+}
+
+.dropText,
+.specialText {
+  color: var(--color-midBlue);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-bold);
+}
+
+.dropText,
+.normalText {
+  color: var(--color-gray);
+  font-size: var(--font-size-small);
+}
+
+#orText2 {
+  color: var(--color-gray);
+  font-size: var(--font-size-small);
+  margin: 0%;
+}
+
+#acceptText {
+  visibility: hidden;
+
+  color: var(--color-orange);
+  font-size: var(--font-size-small);
+  margin: 0%;
+}
+
+/* .innerFileBox button {
+  width: 130px;
+  height: 30px;
+  margin-top: 25px;
+  border-radius: var(--border-radius-boxiest);
+  border: none;
+  background-color: vaR(--color-midBlue);
+  color: var(--color-white);
+  font-size: var(--font-size-smaller);
+  font-weight: var(--font-weight-bold);
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.innerFileBox button:hover {
+  background-color: var(--color-orange);
+} */
+
+.innerFileBox label {
+  width: 130px;
+  height: 25px;
+  margin-top: 25px;
+  border-radius: var(--border-radius-boxiest);
+  border: none;
+  background-color: var(--color-midBlue);
+  color: var(--color-white);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-bold);
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+  text-align: center;
+}
+
+.innerFileBox label:hover {
+  background-color: var(--color-orange);
+}
+
+#supportText {
+  color: var(--color-gray);
+  font-size: var(--font-size-small);
+  margin: 10px;
+}
+
+.columnBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.columnBox p,
+.columnBox ul {
+  margin: 0px 20px;
+}
+
+#columnBoxHeading {
+  border-bottom: 2px solid var(--color-lightGray2);
+  padding-bottom: 5px;
+  color: var(--color-midBlue);
+  font-weight: var(--font-weight-bolder);
+  width: 100%;
+}
+
+.columnBox ul {
+  padding-top: 20px;
+}
+
+.columnBox ul li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.columnBox ul li p {
+  margin: 0%;
+  border-bottom: none;
+  color: var(--color-darkGray);
+}
+
+.columnBox ul li input {
+  padding: 5px;
+  width: 30px;
+  border: none;
+  background-color: var(--color-gray);
+  border-radius: var(--border-radius-box);
+  color: var(--color-white);
+  text-align: center;
+  font-weight: var(--font-weight-bold);
+  transition: background-color 0.3s;
+}
+
+.columnBox ul li input::placeholder {
+  font-weight: none;
+  color: var(--color-white);
+}
+
+.columnBox ul li input:not(:placeholder-shown) {
+  background-color: var(--color-midBlue);
+}
+
+.bullet {
+  padding: 0%;
+  margin: 10px;
+  margin-left: 0px;
+  background-color: var(--color-gray);
+  border-radius: var(--border-radius-rounder);
+  height: 5px;
+  width: 5px;
+}
+
+.parentBullet {
+  display: flex;
+  flex-direction: row;
+}
+
+.delBox1 {
+  display: flex;
+  height: 30px;
+  width: 30px;
+  background-color: var(--color-midBlue);
+  border-radius: var(--border-radius-boxiest);
+  margin-right: 15px;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+}
+
+.delBox1:hover {
+  background-color: var(--color-orange);
+  transform: scale(1.05);
+}
+
+#trash1 {
+  width: 18px;
+  height: auto;
+}
+
+.columnInput {
+  text-transform: uppercase;
+}
+
+em {
+  visibility: hidden;
+  color: var(--color-red);
+  font-size: var(--font-size-smaller);
+}
+
+.inlineLabelsHelp {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#info {
+  padding: 0%;
+  margin: 0%;
+  padding-right: 25px;
+}
+
+#info:hover {
+  content: url("../images/help1.png");
+}
+
+#helpBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 475px;
+  height: 375px;
+  position: absolute;
+  left: 64%;
+  bottom: 10%;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-hard);
+  border-radius: var(--border-radius-rounder);
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+#info:hover ~ #helpBox {
+  opacity: 1 !important;
+}
+
+#helpImg {
+  border: 10px;
+  height: 350px;
+  width: auto;
+  padding-bottom: 15px;
+}

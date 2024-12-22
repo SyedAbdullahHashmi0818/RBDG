@@ -1,0 +1,347 @@
+body {
+  overflow: hidden;
+}
+
+.uploadBg {
+  background-image: url("../images/Group 1.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.controlBar {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin-left: 45px;
+  margin-bottom: 20px;
+}
+
+.backButton {
+  border-radius: var(--border-radius-rounder);
+  background-color: var(--color-white);
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-hard);
+  width: 45px;
+  height: 45px;
+  align-self: center;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.backButton p {
+  padding: 4px;
+  margin: 0%;
+  text-align: center;
+  align-self: center;
+  height: 20px;
+  color: var(--color-darkBlue);
+  font-size: 32px;
+  font-family: var(--font-myFontBold);
+  font-weight: var(--font-weight-bold);
+}
+
+.backButton:hover {
+  background-color: var(--color-orange);
+  cursor: pointer;
+}
+
+.backButton:hover p {
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.title {
+  width: 700px;
+  overflow: hidden;
+  border-radius: var(--border-radius-boxier);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-hard);
+  height: 60px;
+}
+
+#innerBar {
+  width: 700px;
+  background-color: var(--color-midBlue);
+  height: 10px;
+}
+
+#innerContent {
+  margin: 0%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#innerContent p {
+  padding: 15px 10px 20px 20px;
+  font-size: var(--font-size-small);
+  font-family: var(--font-myFontBold);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-midBlue);
+  margin: 0%;
+}
+
+.submitButton {
+  border-radius: var(--border-radius-boxiest);
+  background-color: var(--color-orange);
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-hard);
+  width: 90px;
+  height: 40px;
+  align-self: center;
+  margin-top: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.submitButton p {
+  padding: 10px;
+  margin: 0%;
+  text-align: center;
+  align-self: center;
+  color: var(--color-white);
+  font-size: var(--font-size-small);
+  font-family: var(--font-myFontBold);
+  font-weight: var(--font-weight-bold);
+}
+
+.submitButton:hover {
+  background-color: var(--color-green);
+  cursor: pointer;
+}
+
+.formSection {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+  align-items: center;
+  margin-right: 0px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.formElement {
+  width: 700px;
+  overflow: hidden;
+  border-radius: var(--border-radius-boxier);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-hard);
+  height: 300px;
+  align-items: center;
+  justify-content: center;
+}
+
+.formElementName {
+  border: none;
+}
+
+input:focus {
+  outline: none;
+  border: none;
+}
+
+.elementControlBar {
+  margin-left: 15px;
+  margin-right: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.moduleInfo {
+  display: flex;
+  gap: 20px;
+  padding-left: 10px;
+}
+
+.promptBox {
+  margin: 15px 15px 50px 50px;
+  width: 600px; /* Fixed width */
+  height: 200px; /* Fixed height */
+  border: solid 2px var(--color-midBlue);
+  border-radius: var(--border-radius-boxier);
+  padding: 10px; /* Add padding for inner space */
+  box-sizing: border-box; /* Ensure padding is included in width/height */
+  font-size: 14px;
+  font-weight: 500;
+  resize: none; /* Prevent user resizing */
+  overflow: auto; /* Enable scrollbar if text exceeds the box size */
+  backface-visibility: hidden; /* Prevent rendering issues */
+  transform: translateZ(0); /* Force hardware acceleration to avoid blur */
+  scrollbar-width: none;
+}
+
+.textarea {
+  width: 200px;
+  height: 50px;
+  border: 1px solid var(--color-midBlue);
+}
+
+.promptBox:focus {
+  outline: none;
+  border: none;
+  border: 2px solid var(--color-darkBlue);
+}
+
+.promptBox::placeholder {
+  color: var(--color-midBlue);
+}
+
+.formElementName {
+  padding-top: 20px;
+  width: 300px;
+  color: var(--color-darkBlue);
+  font-size: var(--font-size-small);
+  font-family: var(--font-myFontBold);
+  font-weight: var(--font-weight-bold);
+}
+
+.formElementName::placeholder {
+  color: var(--color-midBlue);
+}
+.idDiv {
+  margin-top: 13px;
+  background-color: var(--color-midBlue);
+  border-radius: var(--border-radius-rounder);
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+}
+
+.formElementId {
+  color: var(--color-white);
+  font-family: var(--font-myFontBold);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-small);
+  margin: 0%;
+  padding-top: 6px;
+  text-align: center;
+  align-self: center;
+}
+
+ul {
+  list-style: none; /* Remove bullets if needed */
+  padding: 0; /* Reset browser default spacing */
+}
+li {
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+.addButton {
+  height: 50px;
+  width: 50px;
+  align-self: center;
+  background-color: var(--color-gray);
+  text-align: center;
+  border-radius: var(--border-radius-rounder);
+  color: var(--color-white);
+  font-size: var(--font-size-large);
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease-in-out;
+  box-shadow: var(--shadow-hard);
+}
+
+.addButton p {
+  align-self: center;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  margin-top: -13px; /* Use a negative value to move it higher */
+}
+
+.addButton:hover {
+  background-color: var(--color-midBlue);
+  cursor: pointer;
+}
+
+.delBox {
+  display: flex;
+  height: 30px;
+  width: 30px;
+  background-color: var(--color-midBlue);
+  border-radius: var(--border-radius-boxiest);
+  margin-right: 15px;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+}
+
+.delBox:hover {
+  background-color: var(--color-orange);
+  transform: scale(1.05);
+}
+
+#trash {
+  width: 18px;
+  height: auto;
+}
+
+.delBoxInner {
+  display: flex;
+  height: 30px;
+  width: 30px;
+  background-color: var(--color-midBlue);
+  border-radius: var(--border-radius-boxiest);
+  margin-right: 15px;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+}
+
+.delBoxInner:hover {
+  background-color: var(--color-orange);
+  transform: scale(1.05);
+}
+
+li:has(.delBoxInner:hover) {
+  animation: shake 0.5s infinite;
+  will-change: transform;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}

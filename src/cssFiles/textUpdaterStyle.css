@@ -1,0 +1,29 @@
+.input-container {
+  width: 150px;
+  height: 50px;
+  background-color: #ffe8c9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 2px solid #b7751a;
+  border-color: #b7751a;
+}
+
+.text-input {
+  border: none;
+  background: transparent;
+  text-align: center;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  width: 100%;
+}
+
+.custom-handle {
+  width: 5px; /* Adjust size to make it smaller */
+  height: 5px;
+  background-color: #b7751a; /* Customize the color */
+  border-radius: 50%; /* Make it circular */
+  border: 2px solid #b7751a; /* Optional: add a border */
+}

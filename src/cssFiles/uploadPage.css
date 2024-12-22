@@ -1,0 +1,160 @@
+.uploadBg {
+  background-image: url("../images/Group 1.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+#mainText {
+  color: var(--color-darkBlue);
+  font-size: var(--font-size-medium);
+  font-family: var(--font-myFontBold);
+  font-weight: var(--font-weight-bold);
+}
+
+#orText {
+  color: var(--color-gray);
+  font-size: var(--font-size-semiMedium);
+  font-family: var(--font-myFontMedium);
+}
+
+.middleBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  justify-self: center;
+  align-self: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.inlineElements {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+}
+
+.box {
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-hard);
+  border-radius: 27px;
+  height: 180px;
+  width: 270px;
+  display: flex;
+  flex-direction: column;
+  padding: 35px;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.box:hover .boxText {
+  color: var(--color-white);
+}
+
+.box:hover .boxImg {
+  content: url("../images/Module Name (1).png");
+}
+
+.box:hover .boxImg2 {
+  content: url("../images/Module Name (3).png");
+}
+
+.box:hover {
+  background-color: var(--color-orange);
+  transform: scale(1.05);
+}
+
+.boxText {
+  margin: 0%;
+  padding: 0%;
+  color: var(--color-midBlue);
+  font-size: var(--font-size-small);
+  font-family: var(--font-myFontBold);
+  font-weight: var(--font-weight-semiBold);
+}
+
+.boxImg {
+  padding-top: 15px;
+  transform: scale(0.9);
+}
+
+.boxImg2 {
+  transform: scale(0.35);
+  transform-origin: top center;
+  padding-top: 20px;
+}
+
+#helpText {
+  transform: bottom center;
+  justify-self: center;
+  align-self: center;
+  position: absolute;
+  top: 90%;
+  left: 40%;
+  right: 40%;
+  color: var(--color-lightBlue);
+  font-size: var(--font-size-small);
+  font-family: var(--font-myFontMedium);
+}
+
+#helpText:hover {
+  color: var(--color-midBlue);
+}
+
+#popUp {
+  position: absolute;
+  top: 73%; /* Position 80% down from the top */
+  left: 54%; /* Center horizontally */
+  background-color: var(--color-lightGray);
+  border-radius: 15px;
+  height: auto;
+  width: 250px; /* Ensure the pop-up has width */
+  padding: 10px;
+  text-align: center;
+  transition: opacity 0.5s ease, visibility 0.5s ease; /* Smooth transition */
+  opacity: 0; /* Start hidden */
+  visibility: hidden; /* Hides the popup */
+}
+
+#popUp.show {
+  opacity: 1; /* Show the popup */
+  visibility: visible; /* Make the popup visible */
+}
+
+.insidePopUp {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#popUp p {
+  margin: 2px;
+  font-size: 12px;
+  cursor: pointer;
+  color: var(--color-darkGray);
+  font-family: var(--font-myFontMedium);
+  text-align: left;
+}
+
+#barText {
+  word-break: break-all;
+  width: 5px;
+  padding-right: 5px;
+}
+
+#closeButton {
+  color: var(--color-gray);
+  font-family: var(--font-myFontMedium);
+  font-weight: var(--font-weight-bold);
+  transition: opacity 0.3s ease-in-out;
+}
+
+#closeButton:hover {
+  color: var(--color-red);
+}

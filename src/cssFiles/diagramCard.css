@@ -1,0 +1,24 @@
+.card {
+  display: flex;
+  height: 300px;
+  width: 225px;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-hard);
+  align-items: center;
+  margin: 20px;
+  border-radius: var(--border-radius-standard);
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.card:hover {
+  background-color: var(--color-orange);
+}
+
+.card img {
+  height: 250px;
+  width: auto;
+  align-self: center;
+  transition: transform 0.3s ease-in-out;
+}

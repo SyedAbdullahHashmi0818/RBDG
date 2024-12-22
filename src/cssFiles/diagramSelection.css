@@ -1,0 +1,98 @@
+#buttonTab button {
+  width: 135px;
+  height: 27px;
+  border: none;
+  background-color: var(--color-white);
+  color: var(--color-midBlue);
+  font-weight: var(--font-weight-bolder);
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+#buttonTab {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  overflow: visible;
+  position: absolute;
+  bottom: 491px;
+  left: 878px;
+  border-bottom-left-radius: var(--border-radius-box);
+  border-bottom-right-radius: var(--border-radius-box);
+  box-shadow: var(--shadow-default);
+  visibility: hidden;
+  cursor: pointer;
+}
+
+#buttonTab button:last-child {
+  border-bottom-left-radius: var(--border-radius-box);
+  border-bottom-right-radius: var(--border-radius-box);
+}
+
+#buttonTab button:first-child:hover {
+  background-color: var(--color-greenDe);
+  color: var(--color-white);
+}
+#buttonTab button:last-child:hover {
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
+
+#slash2 {
+  color: var(--color-gray) !important;
+}
+
+#requirementsMenu {
+  margin: 10px;
+  margin-right: 15px;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-light);
+  border: 10px;
+  border-radius: var(--border-radius-box);
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+#requirementsMenu > div:first-child {
+  color: var(--color-white) !important;
+  background-color: var(--color-orange);
+  border-radius: var(--border-radius-box);
+  padding: 5px 10px;
+  margin-bottom: 0px;
+  width: 120px;
+  text-align: center;
+  font-weight: var(--font-weight-bold);
+  transition: background-color 0.3s ease-in-out;
+}
+
+#requirementsMenu > div:first-child:hover {
+  color: var(--color-white) !important;
+  background-color: var(--color-midBlue);
+}
+
+#requirementsMenu:hover #buttonTab {
+  visibility: visible;
+}
+
+#requirementsMenu > div:first-child:has(+ #buttonTab button:hover) {
+  color: var(--color-white);
+  background-color: var(--color-midBlue);
+}
+
+.architectureBox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-self: center;
+  margin-left: 120px;
+}
+
+#selectionBox {
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+h3 {
+  color: var(--color-midBlue);
+  margin-left: 160px;
+}
