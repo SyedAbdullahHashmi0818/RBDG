@@ -1,0 +1,251 @@
+#dummyNavigation {
+  position: absolute;
+  z-index: 25;
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin-left: 350px;
+  margin-bottom: 20px;
+}
+
+#exportPageButton {
+  z-index: 50;
+  /* position: absolute;
+  top: 10px;
+  left: 400px; */
+  font-size: var(--font-size-smaller);
+  height: 30px;
+  width: 150px;
+  border-radius: var(--border-radius-boxiest);
+  background-color: var(--color-midBlue);
+  border: none;
+  margin: 5px;
+  color: var(--color-white);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  pointer-events: auto;
+}
+
+#addNodeButton {
+  font-size: var(--font-size-smaller);
+  height: 30px;
+  width: 100px;
+  border-radius: var(--border-radius-boxiest);
+  background-color: var(--color-midBlue);
+  border: none;
+  margin: 5px;
+  color: var(--color-white);
+  font-weight: var(--font-weight-bold);
+  transition: background-color 0.3s ease-in-out;
+}
+
+#deleteNodeButton {
+  font-size: var(--font-size-smaller);
+  height: 30px;
+  width: 100px;
+  border-radius: var(--border-radius-boxiest);
+  background-color: var(--color-midBlue);
+  border: none;
+  margin: 5px;
+  color: var(--color-white);
+  font-weight: var(--font-weight-bold);
+  transition: background-color 0.3s ease-in-out;
+}
+
+#deleteEdgeButton {
+  font-size: var(--font-size-smaller);
+  height: 30px;
+  width: 100px;
+  border-radius: var(--border-radius-boxiest);
+  background-color: var(--color-midBlue);
+  border: none;
+  margin: 5px;
+  color: var(--color-white);
+  font-weight: var(--font-weight-bold);
+  transition: background-color 0.3s ease-in-out;
+}
+
+#innerContent2 {
+  margin: 0%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#innerContent2 div {
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+#exportPageButton:hover {
+  background-color: var(--color-orange);
+}
+
+#addNodeButton:hover {
+  background-color: var(--color-orange);
+}
+
+#deleteNodeButton:hover {
+  background-color: var(--color-orange);
+}
+
+#deleteEdgeButton:hover {
+  background-color: var(--color-orange);
+}
+
+.popUp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-standard);
+  box-shadow: var(--shadow-hard);
+  height: 525px;
+  width: 500px;
+}
+
+.popUp p {
+  color: var(--color-midBlue);
+  font-size: var(--font-size-semiMedium);
+  font-weight: var(--font-weight-bold);
+}
+
+#downloadButton2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: none;
+  border: 2px dashed var(--color-midBlue);
+  border-radius: var(--border-radius-boxier);
+  width: 450px;
+  height: 140px;
+}
+
+#downloadButton2 img {
+  transition: transform 0.3s ease-in-out;
+}
+
+#downloadButton2 img:hover + p {
+  color: var(--color-orange);
+}
+
+#downloadButton2 img:hover {
+  transform: scale(1.1);
+}
+
+#downloadButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: none;
+  border: 2px dashed var(--color-midBlue);
+  border-radius: var(--border-radius-boxier);
+  width: 450px;
+  height: 140px;
+}
+
+#downloadButton button {
+  border-radius: var(--border-radius-boxier);
+  background-color: var(--color-midBlue);
+  border: none;
+  margin: 20px;
+  width: 100%;
+  height: 100px;
+  color: var(--color-white);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-semiMedium2);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#closePopUp {
+  border-radius: var(--border-radius-box);
+  background-color: var(--color-gray);
+  border: none;
+  color: var(--color-white);
+  font-size: var(--font-size-small);
+  height: 30px;
+  width: 100px;
+  margin: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#downloadButton button:hover {
+  background-color: var(--color-orange);
+}
+
+#closePopUp:hover {
+  background-color: var(--color-red);
+}
+
+/*made changes here*/
+.popup-content-errorOccured {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  width: 300px;
+  height: 150px;
+  border-radius: var(--border-radius-boxiest);
+  padding: 15px;
+  align-items: center;
+  justify-content: center;
+  animation: wiggle 0.3s ease-in-out 1;
+}
+
+.popup-content-errorOccured div p:first-child {
+  margin-top: 3px;
+  font-size: var(--font-size-semiMedium2);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-midBlue);
+}
+
+.popup-content-errorOccured div p:last-of-type {
+  text-align: center;
+  margin-top: 5px;
+  align-self: center;
+  color: var(--color-midBlue);
+}
+
+.popup-content-errorOccured b {
+  color: var(--color-red);
+}
+
+#errorOccuredButton {
+  font-weight: var(--font-weight-bolder);
+  align-self: center;
+  text-align: center;
+  padding: 5px;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+  border-radius: var(--border-radius-box);
+}
+
+#errorOccuredButton:hover {
+  background-color: var(--color-orange);
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+}

@@ -84,7 +84,8 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-self: center;
-  margin-left: 120px;
+  /* margin-left: 120px; */
+  margin-left: 170px;
 }
 
 #selectionBox {
@@ -95,4 +96,29 @@
 h3 {
   color: var(--color-midBlue);
   margin-left: 160px;
+}
+
+.moduleSelectionSelect {
+  display: flex;
+  flex-direction: row;
+}
+
+.moduleSelectionSelect select {
+  margin-left: 15px;
+  height: 35px;
+  width: 150px;
+  align-self: center;
+  background-color: var(--color-midBlue);
+  border: 1px solid var(--color-midBlue);
+  color: var(--color-white);
+  font-weight: var(--font-weight-bolder);
+  border-radius: var(--border-radius-box);
+  text-align: center;
+}
+
+.moduleSelectionSelect select option {
+  border-radius: none;
+  background-color: var(--color-white);
+  color: var(--color-midBlue);
+  border: 1px solid var(--color-midBlue);
 }

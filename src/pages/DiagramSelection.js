@@ -1,4 +1,8 @@
-import { React } from "react";
+import { React, useState } from "react";
+import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { getGlobalState, setGlobalState } from "../components/globalState";
+
 import Navbar from "../components/navbar";
 import DiagramCard from "../components/DiagramCard";
 
@@ -26,10 +30,39 @@ import {
 } from "../components/DiagramImgPaths.js";
 
 const DiagramSelection = () => {
+  let navigate = useNavigate();
+  const goBack = () => {
+    //this
+    navigate("/PreviewRequirements");
+  };
+
+  const [modulescleaned, setModulesCleaned] = useState(
+    getGlobalState("cleaned_requirements")
+  );
+
+  const location = useLocation();
+  const { updatedModules } = location.state || {};
+  console.log("Data from preview page: ", updatedModules);
+
+  const handleChange = (e) => {
+    const selectedOption = e.target.options[e.target.selectedIndex];
+    const selectedText = selectedOption ? selectedOption.text : "";
+    console.log("Selected Module:", selectedText);
+
+    if (selectedText !== "---") {
+      setGlobalState("isModuleSelected", true);
+      setGlobalState("selectedModule", selectedText);
+    }
+  };
+
   return (
     <div className="uploadBg1">
+      {console.log(getGlobalState("cleaned_requirements"))}
       <Navbar />
       <div className="controlBar1">
+        <div className="backButton" onClick={goBack}>
+          <p>&lt;</p>
+        </div>
         <div className="title1">
           <div id="innerBar1"></div>
           <div id="innerContent1">
@@ -37,10 +70,10 @@ const DiagramSelection = () => {
             <p id="slash2">|</p>
             <div id="requirementsMenu">
               <div>Requirements</div>
-              <div id="buttonTab">
+              {/* <div id="buttonTab">
                 <button>Preview</button>
                 <button>Submit New</button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -56,7 +89,19 @@ const DiagramSelection = () => {
           <DiagramCard diagramName="LAY" defaultImg={LAY1} hoveredImg={LAY2} />
           <DiagramCard diagramName="BRK" defaultImg={BRK1} hoveredImg={BRK2} />
         </div>
-        <h3>UML Diagrams</h3>
+        <div className="moduleSelectionSelect">
+          <h3>UML Diagrams</h3>
+          <select defaultChecked="---" onChange={handleChange}>
+            <option value="---" key="---">
+              Select Module
+            </option>
+            {modulescleaned.map((item) => (
+              <option value={item.moduleName} key={item.moduleName}>
+                {item.moduleName}
+              </option>
+            ))}
+          </select>
+        </div>
         <div className="architectureBox">
           <DiagramCard diagramName="ACT" defaultImg={ACT1} hoveredImg={ACT2} />
           <DiagramCard diagramName="USC" defaultImg={USC1} hoveredImg={USC2} />

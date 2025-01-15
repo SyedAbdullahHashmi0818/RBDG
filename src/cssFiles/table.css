@@ -90,6 +90,7 @@ td {
 
 .tdLine {
   border-bottom: 1px solid var(--color-lightGray2);
+  padding: 0%;
 }
 
 .tdLine p {
@@ -182,12 +183,43 @@ tbody tr:last-child td {
   color: var(--color-midBlue);
 }
 
+/* .inputFieldParent {
+  display: flex;
+  flex-wrap: wrap; 
+  width: 100%;
+}
+
 .inputField {
   background-color: transparent;
   outline: none;
   width: 500px;
   border: none;
   color: var(--color-midBlue);
+} */
+
+tr.row {
+  background-color: var(--color-white);
+}
+
+.inputFieldParent {
+  display: block; /* Simple block-level container */
+  width: 100%; /* Make the parent container span full width */
+  max-width: 500px; /* Optional: Limit the maximum width */
+  align-items: center;
+  padding-top: 17px;
+}
+
+.inputField {
+  width: 525px; /* Make the textarea span the full width of the parent */
+  min-height: auto; /* Set an initial height */
+  resize: vertical; /* Allow users to resize vertically but not horizontally */
+  box-sizing: border-box; /* Include padding and border in the width/height */
+  background-color: transparent;
+  color: var(--color-midBlue);
+  outline: none;
+  border: none;
+  font-family: inherit; /* Match the font to the surrounding content */
+  font-size: var(--font-size-smaller);
 }
 
 .header {
@@ -219,7 +251,6 @@ tbody tr:last-child td {
   background-color: var(--color-midBlue);
   border: none;
   padding-top: 7px;
-  width: 100px;
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-smallo);
   font-family: var(--font-myFontBold);

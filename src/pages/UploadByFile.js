@@ -1,6 +1,9 @@
 import { React, useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDropzone } from "react-dropzone";
+import Papa from "papaparse";
+import * as XLSX from "xlsx";
+
 import Navbar from "../components/navbar";
 import trashIcon from "../images/trash.png";
 
@@ -84,15 +87,17 @@ const UploadByFile = () => {
     }
   };
 
-  //Sending the file + ColA + ColB to the backend
   const submit = () => {
+    console.log("got here as well");
     var completeFlag = true;
 
+    // Validate file upload
     if (myFile.length === 0) {
       alert("Please Upload file");
       completeFlag = false;
     }
 
+    // Validate Column A and Column B selections
     if (colA === "") {
       document.getElementsByTagName("em")[0].style.visibility = "visible";
       completeFlag = false;
@@ -104,9 +109,139 @@ const UploadByFile = () => {
     }
 
     if (completeFlag) {
-      console.log("send the object to the backend here");
+      const file = myFile[0]; // Assuming myFile is an array containing the file
+      const reader = new FileReader();
+
+      reader.onload = (event) => {
+        const binaryStr = event.target.result;
+        let parsedData = [];
+
+        if (file.type === "text/csv") {
+          // Parse CSV using PapaParse with proper options
+          Papa.parse(file, {
+            complete: (result) => {
+              const parsedData = result.data;
+              // Process CSV data (assume columns A and B are the first two columns)
+              const formattedData = parsedData.map((row) => ({
+                moduleName: row[0], // Column A
+                requirement: row[1], // Column B
+              }));
+
+              // Remove any rows with empty moduleName or requirement
+              const filteredData = formattedData.filter(
+                (item) => item.moduleName && item.requirement
+              );
+
+              console.log(JSON.stringify(filteredData, null, 2)); // Pretty print
+              // Now use filteredData directly (don't stringify it)
+              let output = [];
+              let idTrackerCleaned = 0;
+
+              // Loop over filteredData, which is an array of objects
+              for (let i = 0; i < filteredData.length; i++) {
+                let existingModule = output.find(
+                  (item) => item.moduleName === filteredData[i].moduleName
+                );
+
+                if (!existingModule) {
+                  if (filteredData[i].moduleName) {
+                    idTrackerCleaned++;
+                    output.push({
+                      index: idTrackerCleaned.toString(),
+                      moduleName: filteredData[i].moduleName,
+                      requirements: [filteredData[i].requirement],
+                    });
+                  }
+                } else {
+                  existingModule.requirements.push(filteredData[i].requirement);
+                }
+              }
+              // Proceed with sending to backend or other logic
+              console.log("This is the ouput", output);
+              console.log("Send the object to the backend here");
+            },
+            header: false, // Assuming no header row
+            skipEmptyLines: true, // Skip empty lines
+            dynamicTyping: true, // Convert numbers automatically
+          });
+        } else if (
+          file.type ===
+            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" ||
+          file.type === "application/vnd.ms-excel"
+        ) {
+          // Parse XLSX/XLS using xlsx
+          const workbook = XLSX.read(binaryStr, { type: "binary" });
+          const sheetName = workbook.SheetNames[0];
+          const worksheet = workbook.Sheets[sheetName];
+          const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+
+          // Process XLSX data (assume columns A and B are the first two columns)
+          const formattedData = jsonData.map((row) => ({
+            moduleName: row[0], // Column A
+            requirement: row[1], // Column B
+          }));
+          console.log(JSON.stringify(formattedData, null, 2)); // Log the JSON data
+          // Now use filteredData directly (don't stringify it)
+          let output = [];
+          let idTrackerCleaned = 0;
+
+          // Loop over filteredData, which is an array of objects
+          for (let i = 0; i < formattedData.length; i++) {
+            let existingModule = output.find(
+              (item) => item.moduleName === formattedData[i].moduleName
+            );
+
+            if (!existingModule) {
+              if (formattedData[i].moduleName && formattedData[i].requirement) {
+                idTrackerCleaned++;
+                output.push({
+                  index: idTrackerCleaned.toString(),
+                  moduleName: formattedData[i].moduleName,
+                  requirements: [formattedData[i].requirement],
+                });
+              }
+            } else {
+              existingModule.requirements.push(formattedData[i].requirement);
+            }
+          }
+          // Proceed with sending to backend or other logic
+          console.log("This is the ouput", output);
+          console.log("Send the object to the backend here");
+        }
+      };
+
+      // Read file as text for CSV or binary for XLSX
+      if (file.type === "text/csv") {
+        reader.readAsText(file);
+      } else {
+        reader.readAsBinaryString(file);
+      }
     }
   };
+
+  //Sending the file + ColA + ColB to the backend
+  // const submit = () => {
+  //   var completeFlag = true;
+
+  //   if (myFile.length === 0) {
+  //     alert("Please Upload file");
+  //     completeFlag = false;
+  //   }
+
+  //   if (colA === "") {
+  //     document.getElementsByTagName("em")[0].style.visibility = "visible";
+  //     completeFlag = false;
+  //   }
+
+  //   if (colB === "") {
+  //     document.getElementsByTagName("em")[1].style.visibility = "visible";
+  //     completeFlag = false;
+  //   }
+
+  //   if (completeFlag) {
+  //     console.log("send the object to the backend here");
+  //   }
+  // };
 
   const delItems = () => {
     setColA("");

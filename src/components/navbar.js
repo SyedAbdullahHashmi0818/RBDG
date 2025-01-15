@@ -1,6 +1,7 @@
 import React from "react";
 import MainLogo from "./MainLogo";
 import "../cssFiles/navbar.css";
+import gitcat from "../images/gitcat.png";
 
 function Navbar() {
   return (
@@ -18,10 +19,14 @@ function Navbar() {
 
       {/* Right Section */}
       <div className="navbar-right">
-        <a href="/dummyPage" className="navbar-link">
-          About
+        <a
+          href="https://github.com/SyedAbdullahHashmi0818/RBDG"
+          target="_blank"
+          rel="noopener noreferrer"
+          id="gitCatAnchor"
+        >
+          <img src={gitcat} alt="img" id="gitCatNav" />
         </a>
-        <button className="navbar-button">Toggle</button>
       </div>
     </nav>
   );

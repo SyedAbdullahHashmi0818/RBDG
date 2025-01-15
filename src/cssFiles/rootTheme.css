@@ -1,6 +1,7 @@
 /* theme.css */
 :root {
   /* Colors */
+  --color-darkerBlue: #072643;
   --color-darkBlue: #003a6f;
   --color-midBlue: #3a70a2;
   --color-lightBlue: #6ec5e9;
@@ -11,16 +12,20 @@
   --color-lightGray: #f9f7f7;
   --color-black: #1e1e1e;
   --color-orange: #f28e30;
+  --color-lightOrange: #f4aa64;
   --color-yellow: #f0aa40;
   --color-red: #ff4545;
   --color-green: #7dd56c;
   --color-greenDe: #80c772;
+  --color-gold: #ba820c;
+  --color-lightGold: #d59e2b;
 
   /* Shadows */
   --shadow-default: 4px 4px 10px rgba(0, 0, 0, 0.3);
   --shadow-light: 4px 4px 10px rgba(0.05, 0.05, 0.05, 0.05);
   --shadow-hard: 0px 0px 10px rgba(0.3, 0.3, 0.3, 0.3);
   --shadow-down: 0px 13px 48px -16px rgba(0, 0, 0, 0.75);
+  --shadow-hardest: 0px 13px 48px -16px rgba(0.75, 0.75, 0.75, 0.75);
   /* Fonts */
   --font-myFontBold: "Roboto-SemiBold", Helvetica, sans-serif;
   --font-myFontMedium: "Roboto-Medium", Helvetica;
@@ -30,6 +35,7 @@
   --font-size-large: 48px;
   --font-size-medium: 36px;
   --font-size-semiMedium: 24px;
+  --font-size-semiMedium2: 20px;
   --font-size-small: 16px;
   --font-size-smallo: 14px;
   --font-size-smaller: 12px;

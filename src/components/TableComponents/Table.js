@@ -68,6 +68,7 @@ const RequirementsTable = (props) => {
           onChange={updateModuleName}
           placeholder="Module Name"
           className="moduleInput"
+          size={moduleName.length > 0 ? moduleName.length : 10}
         />
       </div>
       <div className="tableBox">
@@ -81,6 +82,7 @@ const RequirementsTable = (props) => {
                   id="trashInner"
                   src={trashIcon}
                   onClick={() => deleteModule(index, modulesList)}
+                  alt="img"
                 ></img>
               </th>
             </tr>
@@ -96,13 +98,23 @@ const RequirementsTable = (props) => {
                   >
                     {requirementRow}
                   </p> */}
-                  <input
-                    type="text"
-                    value={requirementRow}
-                    onChange={(event) => updateRequirements(event, i)}
-                    className="inputField"
-                    placeholder="Type your requirement"
-                  />
+                  {/* <div className="inputFieldParent">
+                    <input
+                      type="text"
+                      value={requirementRow}
+                      onChange={(event) => updateRequirements(event, i)}
+                      className="inputField"
+                      placeholder="Type your requirement"
+                    />
+                  </div> */}
+                  <div className="inputFieldParent">
+                    <textarea
+                      value={requirementRow}
+                      onChange={(event) => updateRequirements(event, i)}
+                      className="inputField"
+                      placeholder="Type your requirement"
+                    ></textarea>
+                  </div>
                 </td>
                 <td className="rowOptions">
                   <button>

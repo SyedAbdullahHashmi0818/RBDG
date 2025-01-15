@@ -278,7 +278,7 @@ body {
 .columnBox ul li p {
   margin: 0%;
   border-bottom: none;
-  color: var(--color-darkGray);
+  color: var(--color-darkGray) !important;
 }
 
 .columnBox ul li input {

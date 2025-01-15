@@ -1,0 +1,42 @@
+.text-updater-node1 {
+  background-color: none;
+  border-radius: 8px;
+  border: none;
+  display: flex;
+  flex-direction: column; /* Ensure vertical stacking */
+  align-items: start;
+  justify-content: start;
+  position: relative;
+  transition: border 0.1s, box-shadow 0.1s;
+  width: 100%; /* Allow width to scale */
+  height: 100%; /* Allow height to scale */
+}
+
+.input-container1 {
+  padding: 10px; /* Adjust padding for better placement */
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  width: 100%; /* Full width */
+  height: auto; /* Adjust height for the input */
+}
+
+.text-input1 {
+  border: none;
+  background: transparent;
+  text-align: center; /* Center text inside the input */
+  outline: none;
+  font-size: 16px;
+  color: var(--color-darkBlue);
+  width: 80%; /* Adjust width to fit centered alignment */
+  height: auto; /* Auto height for better scaling */
+  font-weight: var(--font-weight-bolder);
+}
+
+.custom-handle1 {
+  width: 1px;
+  height: 1px;
+  background-color: var(--color-darkBlue);
+  border-radius: 50%;
+  border: none;
+}

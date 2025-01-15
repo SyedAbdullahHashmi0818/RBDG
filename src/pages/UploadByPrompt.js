@@ -1,40 +1,116 @@
 import { React, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { setGlobalState, getGlobalState } from "../components/globalState";
+import Popup from "reactjs-popup";
+
 import Navbar from "../components/navbar";
 import "../cssFiles/uploadbyPrompt.css";
 import FormElementList from "../components/FormElementList";
-
 import trashIcon from "../images/trash.png";
+import loadingWheel from "../gifs/Loading (1).gif";
 
 const UploadByPrompt = () => {
-  const [modulesList, setModulesList] = useState([
-    {
-      index: "1",
-      moduleName: "",
-      requirements: "",
-    },
-  ]);
+  // added this line here
+  const [modulesList, setModulesList] = useState(
+    getGlobalState("concatenated_requirements")
+  );
+  const [loading, setLoading] = useState(false);
+  // added line ends here
+  // OLD USE STATE FUN
+  // const [modulesList, setModulesList] = useState([
+  //   {
+  //     index: "1",
+  //     moduleName: "",
+  //     requirements: "",
+  //   },
+  // ]);
 
   let navigate = useNavigate();
   const goBack = () => {
+    //this
+    setGlobalState("concatenated_requirements", modulesList);
     navigate("/UploadRequirements");
   };
 
-  function getListElements() {
-    var list = document.getElementById("inputList").getElementsByTagName("li");
-    var inputListArray = [];
-
-    for (var i = 0; i < list.length; i++) {
-      inputListArray.push({
-        index: list[i].getElementsByClassName("formElementId")[0].textContent,
-        moduleName: list[i].getElementsByClassName("formElementName")[0].value,
-        requirements:
-          list[i].getElementsByClassName("promptBox")[0].textContent,
-      });
-    }
-
-    console.log(inputListArray);
+  //added this function here
+  function checkForMissingValuesInPrompt() {
+    var hasMissingValues = false;
+    modulesList.forEach((item) => {
+      if (item["moduleName"] === "") {
+        alert("Missing Module Name in Module " + item["index"]);
+        hasMissingValues = true;
+      }
+      if (item["requirements"] === "") {
+        alert("Missing Requirements Name in Module " + item["index"]);
+        hasMissingValues = true;
+      }
+    });
+    return hasMissingValues;
   }
+  // OLD FUNCTION
+  // function getListElements() {
+  //   var list = document.getElementById("inputList").getElementsByTagName("li");
+  //   var inputListArray = [];
+
+  //   for (var i = 0; i < list.length; i++) {
+  //     inputListArray.push({
+  //       index: list[i].getElementsByClassName("formElementId")[0].textContent,
+  //       moduleName: list[i].getElementsByClassName("formElementName")[0].value,
+  //       requirements:
+  //         list[i].getElementsByClassName("promptBox")[0].textContent,
+  //     });
+  //   }
+
+  //   console.log(inputListArray);
+  // }
+
+  // JAVERIA CODE
+  function getListElements() {
+    if (checkForMissingValuesInPrompt()) {
+      console.log("this gets returned");
+      return;
+    }
+    //this
+    setGlobalState("concatenated_requirements", modulesList);
+    const list = document
+      .getElementById("inputList")
+      .getElementsByTagName("li");
+    var inputArray = [];
+    for (let i = 0; i < list.length; i++) {
+      const moduleName =
+        list[i].getElementsByClassName("formElementName")[0].value;
+      const requirementsText =
+        list[i].getElementsByClassName("promptBox")[0].textContent;
+      const moduleObject = {
+        module: moduleName,
+        requirements: requirementsText,
+      };
+      inputArray.push(moduleObject);
+    }
+    console.log("Sending to server:", inputArray);
+    //this
+    setLoading(true);
+    fetch("http://localhost:8000/requirements/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(inputArray),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data);
+        navigate("/previewRequirements", { state: data["project_id"] });
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+    //above
+  }
+  // JAVERIA CODE ENDS HERE
 
   function addModule() {
     setModulesList([
@@ -118,6 +194,20 @@ const UploadByPrompt = () => {
       <div className="addButton" onClick={addModule}>
         <p>+</p>
       </div>
+      <Popup
+        open={loading}
+        modal
+        nested
+        closeOnDocumentClick={false} // Prevent closing by clicking outside
+        overlayStyle={{
+          background: "rgba(255, 255, 255, 0.84)", // Dark background
+        }}
+      >
+        <div className="popup-content-uploadByPrompt">
+          <img src={loadingWheel} alt="Loading..." />
+          <p>Now Loading</p>
+        </div>
+      </Popup>
     </div>
   );
 };

@@ -345,3 +345,15 @@ li:has(.delBoxInner:hover) {
     transform: translate(1px, -2px) rotate(-1deg);
   }
 }
+
+.popup-content-uploadByPrompt img {
+  height: 100px;
+  width: auto;
+}
+
+.popup-content-uploadByPrompt p {
+  color: var(--color-midBlue);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+}
